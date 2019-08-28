@@ -218,7 +218,7 @@ RUN echo @testing http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repo
     pip install -U certbot && \
     mkdir -p /etc/letsencrypt/webrootauth && \
     rm -f /usr/bin/vi && \
-    ls -n /usr/bin/vim /usr/bin/vi && \
+    ln -s /usr/bin/vim /usr/bin/vi && \
     apk del gcc musl-dev linux-headers libffi-dev augeas-dev python-dev make autoconf
 #    apk del .sys-deps
 #    ln -s /usr/bin/php7 /usr/bin/php
