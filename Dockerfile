@@ -279,5 +279,5 @@ ADD errors/ /var/www/errors
 
 EXPOSE 443 80
 
-WORKDIR "/var/www/html"
+WORKDIR /var/www/html
 CMD ["/start.sh"]
