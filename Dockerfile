@@ -276,6 +276,11 @@ RUN chmod 755 /usr/bin/pull && chmod 755 /usr/bin/push && chmod 755 /usr/bin/let
 ADD src/ /var/www/html/
 ADD errors/ /var/www/errors
 
+# crontab && schedule 
+COPY scripts/schedule.sh /
+COPY cron/nginx /var/spool/cron/crontabs/
+RUN chown nginx.nginx /schedule.sh && \
+    chmod +x /schedule.sh
 
 EXPOSE 443 80
 
